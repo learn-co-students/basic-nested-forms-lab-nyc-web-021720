@@ -1,0 +1,14 @@
+<%= form_for @recipe do |fb| %>
+    <%= fb.label :title %>
+    <%= fb.text_field :title %>
+
+    <%= fb.fields_for :ingredients do |ing_f| %>
+        <%= ing_f.label :name %>
+        <%= ing_f.text_field :name %>
+
+        <%= ing_f.label :quantity %>
+        <%= ing_f.text_field :quantity %>
+    <% end %>
+
+    <%= fb.submit "Create Recipe" %>
+<% end %>
